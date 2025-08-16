@@ -8,34 +8,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./Assets/CSS/styles.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-    <style>
-
-    </style>
 </head>
 
 <body>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+
         <nav aria-label="Primary">
             <div class="logo">
                 <img src="./Assets/Images/LogoPng.png" alt="logo">
             </div>
-            <ul class="nav-links">
+
+            <!-- Mobile toggle button -->
+            <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <!-- Updated: add id for accessibility/control -->
+            <ul class="nav-links" id="primary-nav">
                 <li><a href="#home" class="active" aria-current="page">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Gallery</a></li>
+                <li class="nav-contact-mobile"><a href="#contact">Contact</a></li>
             </ul>
 
-            
+            <!-- Keep contact button for larger screens -->
             <a href="#contact" class="contact-link-btn">
                 <span>Contact Us</span>
                 <i class="fas fa-phone" aria-hidden="true"></i>
             </a>
         </nav>
 
+        <!-- overlay for drawer -->
+        <div class="nav-overlay" hidden></div>
+
         <div class="hero-content">
+            <div class="hero-image">
+                <!-- Make the image container the positioning context -->
+                <div class="hero-image__frame">
+                    <img src="./Assets/Images/HeroSection-IMG02.png" alt="Cleaning Service">
+                    <!-- Tags behind the head -->
+                    <div class="tags">
+                        <span class="tag" id="tag1">
+                            <i class="fas fa-home"></i> Apartment Cleaning
+                        </span>
+                        <span class="tag" id="tag2">
+                            <i class="fas fa-utensils"></i> Restaurant Cleaning
+                        </span>
+                        <span class="tag" id="tag3">
+                            <i class="fas fa-trash-alt"></i> Waste Disposal
+                        </span>
+                    </div>
+                </div>
+            </div>
+
             <div class="hero-text">
                 <div class="we-give">
                     <img src="./Assets/Images/water-drop.png" alt="Water Drop Icon" class="water-drop-icon">
@@ -47,23 +75,6 @@
                 <div class="cta-buttons">
                     <button class="appointment-btn">Get an Appointment</button>
                     <a class="services-btn" href="#services">Explore Services</a>
-                </div>
-            </div>
-
-            <div class="hero-image">
-                <img src="./Assets/Images/HeroSection-IMG02.png" alt="Cleaning Service">
-
-                <!-- Tags behind the woman -->
-                <div class="tags">
-                    <span class="tag" id="tag1">
-                        <i class="fas fa-home"></i> Apartment Cleaning
-                    </span>
-                    <span class="tag" id="tag2">
-                        <i class="fas fa-utensils"></i> Restaurant Cleaning
-                    </span>
-                    <span class="tag" id="tag3">
-                        <i class="fas fa-trash-alt"></i> Waste Disposal
-                    </span>
                 </div>
             </div>
         </div>
@@ -82,14 +93,13 @@
                 </div>
                 <h2>Your Trusted Cleaning Partner From Beringen!</h2>
                 <p>We are your reliable partner in Beringen for all types of cleaning. We have over 20 years of
-                    professional
-                    experience and can provide you with professional advice in all areas of cleaning. From apartment
+                    professional experience and can provide you with professional advice in all areas of cleaning. From
+                    apartment
                     cleaning for a move, to building and maintenance cleaning, to office cleaning and garden
                     maintenance, we
                     offer everything.</p>
                 <p>We work with above-average cleanliness and attach great importance to the quality of our work. To
-                    achieve
-                    the perfect result for you, we tailor our services to your individual needs and wishes.</p>
+                    achieve the perfect result for you, we tailor our services to your individual needs and wishes.</p>
             </div>
         </div>
     </section>
@@ -112,8 +122,11 @@
             <!-- link points to the cards area in this section -->
             <a href="#services" class="s-cta">
                 Explore All
-                <span class="s-cta__ico"><i class="fas fa-arrow-up-right"></i></span>
+                <span class="s-cta__ico">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                </span>
             </a>
+
         </div>
 
         <div class="services-cards" aria-label="Service cards">
@@ -125,8 +138,7 @@
                 <div class="service-card-content">
                     <h3>Home Cleaning</h3>
                     <p>While we can customize your cleaning plan to suit your needs, most clients schedule regular
-                        cleaning
-                        services.</p>
+                        cleaning services.</p>
                     <a href="#contact" class="book-now-btn">
                         Book Now
                         <span class="btn-corner-ico"><i class="fas fa-external-link-alt" aria-hidden="true"></i></span>
@@ -142,8 +154,7 @@
                 <div class="service-card-content">
                     <h3>Office Cleaning</h3>
                     <p>While we can customize your cleaning plan to suit your needs, most clients schedule regular
-                        cleaning
-                        services.</p>
+                        cleaning services.</p>
                     <a href="#contact" class="book-now-btn">
                         Book Now
                         <span class="btn-corner-ico"><i class="fas fa-external-link-alt" aria-hidden="true"></i></span>
@@ -159,8 +170,7 @@
                 <div class="service-card-content">
                     <h3>Waste Disposal</h3>
                     <p>While we can customize your cleaning plan to suit your needs, most clients schedule regular
-                        cleaning
-                        services.</p>
+                        cleaning services.</p>
                     <a href="#contact" class="book-now-btn">
                         Book Now
                         <span class="btn-corner-ico"><i class="fas fa-external-link-alt" aria-hidden="true"></i></span>
@@ -182,8 +192,7 @@
                 <h2 class="t-title">Feedback From Our Valuable Customers</h2>
                 <p class="t-lead">
                     We take pride in delivering quality and satisfaction. Hear directly from our happy customers about
-                    their
-                    experiences with our cleaning services, honest feedback that speaks for itself.
+                    their experiences with our cleaning services, honest feedback that speaks for itself.
                 </p>
 
                 <div class="t-nav">
@@ -212,8 +221,7 @@
                     <p class="t-name">Jhon Immanuel</p>
                     <p class="t-copy">
                         We take pride in delivering quality and satisfaction. Hear directly from our happy customers
-                        about
-                        their experiences with our cleaning services, honest feedback that speaks for itself.
+                        about their experiences with our cleaning services, honest feedback that speaks for itself.
                     </p>
                 </figcaption>
             </figure>
@@ -425,6 +433,53 @@
         </div>
     </footer>
 
+    <!-- Minimal JS for the mobile menu -->
+    <script>
+        (function () {
+            const toggle = document.querySelector('.nav-toggle');
+            const nav = document.getElementById('primary-nav');
+            const overlay = document.querySelector('.nav-overlay');
+            const links = nav.querySelectorAll('a');
+
+            function openMenu() {
+                nav.classList.add('open');
+                document.body.classList.add('nav-open');
+                overlay.hidden = false;
+                requestAnimationFrame(() => overlay.classList.add('show'));
+                toggle.setAttribute('aria-expanded', 'true');
+                toggle.setAttribute('aria-label', 'Close menu');
+                toggle.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i>';
+            }
+
+            function closeMenu() {
+                nav.classList.remove('open');
+                document.body.classList.remove('nav-open');
+                overlay.classList.remove('show');
+                overlay.addEventListener('transitionend', () => { overlay.hidden = true; }, { once: true });
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.setAttribute('aria-label', 'Open menu');
+                toggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+            }
+
+            toggle.addEventListener('click', () => {
+                if (nav.classList.contains('open')) closeMenu(); else openMenu();
+            });
+
+            overlay.addEventListener('click', closeMenu);
+
+            links.forEach(a => {
+                a.addEventListener('click', () => {
+                    // close after navigating on mobile
+                    if (nav.classList.contains('open')) closeMenu();
+                });
+            });
+
+            // Ensure correct state on resize (desktop reset)
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) closeMenu();
+            });
+        })();
+    </script>
 </body>
 
 </html>
