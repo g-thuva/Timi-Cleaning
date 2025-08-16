@@ -59,6 +59,34 @@ p {
     line-height: 1.5;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.contact-link-btn {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    height: 46px;
+    padding: 0 18px;
+    border-radius: 12px;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(32, 173, 229, .18);
+    cursor: pointer;
+}
+
+.contact-link-btn i {
+    font-size: 14px;
+    width: 26px;
+    height: 26px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 8px;
+}
+
 /* =========================================
    NAVBAR
    ========================================= */
